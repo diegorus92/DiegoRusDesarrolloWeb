@@ -1,0 +1,26 @@
+h1{
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    text-decoration-line: underline;
+}
+
+.webInstituto{
+    text-align: center;
+}
+
+.casillaEncabezado{
+    width: 5%;
+}
+
+.nivel1{
+    width: 100%;
+}
+
+.nivel2{
+    width: 100%;
+}
+
+.nivel3{
+    width: 100%;
+}
