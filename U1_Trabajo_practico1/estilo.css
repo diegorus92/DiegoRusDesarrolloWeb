@@ -24,3 +24,16 @@ h1{
 .nivel3{
     width: 100%;
 }
+
+.casillaEncabezado > img{
+    width: 90%;
+    height: 80px;
+    position: relative;
+    left: 5%;
+    top: 50%;
+}
+
+.casillaEncabezado > div{
+    position:relative;
+    left: 35%;
+}
