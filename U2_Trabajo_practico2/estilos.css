@@ -11,7 +11,7 @@ body{
     background-color:peru;
 }
 
-.divEncabezado a{
+.enlace{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.7rem;
     float: right;
@@ -21,7 +21,7 @@ body{
     color: rgb(53, 53, 53);
 }
 
-.divEncabezado a:hover{
+.enlace:hover{
     color: #f74545;
     transition: color 400ms ease;
 }
@@ -62,3 +62,80 @@ a.boton:hover{
     transition: background-color 450ms ease;
 }
 
+.imagenesEstudios{
+    background-color:beige;
+    margin-top: 7rem;
+}
+
+.listado{
+    background-color:burlywood;
+    max-width: 50%;
+}
+
+.listado img{
+    max-width: 100%;
+    width: 530px;
+    margin-top: 150px;
+}
+
+.listado h1{
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+}
+
+
+.imagenesEstudios  .enlace{
+    float: none;
+    font-size: 1.5rem;
+}
+
+.derecho{
+    background-color: chocolate;
+    margin-left: 52%;
+    margin-top: -120%;
+    margin-bottom: 15%;
+}
+
+.imagenesEstudios .boton{
+    margin-left: 25%;
+}
+
+.seccionSistemas{
+    background-color:darkgoldenrod;
+}
+
+.titulo{
+    font-family: 'Oswald', sans-serif;
+    font-size: 100px;
+    margin-bottom: 0.5rem;
+}
+
+.seccionSistemas > p{
+    max-width: 700px;
+    margin-bottom: 1.5rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(51, 51, 51);
+    font-size: 25px;
+    line-height: 50px;
+}
+
+.seccionSistemas > a{
+    font-style: none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-size: 2rem;
+    color: black;
+}
+
+.scroll{
+    background-color: brown;
+    margin-top: 50px;
+    overflow:auto;
+    white-space: nowrap;
+}
+
+.scroll > img{
+   display: inline-block;
+   width: 500px;
+   padding: 25px;
+}
