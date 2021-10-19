@@ -1,14 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
 body{
-    background-color:peachpuff;
     margin-left: auto;
     margin-right: auto;
     max-width: 1366px;
     width: 90%;
-}
-
-.divEncabezado{
-    background-color:peru;
+    background-image: url("imagenes/fondo_body.png");
+    background-repeat: repeat-x;
+    background-repeat: repeat-y;
+    background-size: 2000px 1455px;
 }
 
 .enlace{
@@ -26,9 +25,6 @@ body{
     transition: color 400ms ease;
 }
 
-.divPresentacion{
-    background-color: lightpink;
-}
 
 .divPresentacion h1{
     font-family: 'Oswald', sans-serif;
@@ -37,7 +33,6 @@ body{
 }
 
 .divPresentacion p{
-    background-color: lightseagreen;
     max-width: 700px;
     margin-top: 0.01rem;
     margin-bottom: 5.5rem;
@@ -63,12 +58,10 @@ a.boton:hover{
 }
 
 .imagenesEstudios{
-    background-color:beige;
     margin-top: 7rem;
 }
 
 .listado{
-    background-color:burlywood;
     max-width: 50%;
 }
 
@@ -90,18 +83,13 @@ a.boton:hover{
 }
 
 .derecho{
-    background-color: chocolate;
     margin-left: 52%;
     margin-top: -120%;
     margin-bottom: 15%;
 }
 
 .imagenesEstudios .boton{
-    margin-left: 25%;
-}
-
-.seccionSistemas{
-    background-color:darkgoldenrod;
+    margin-left: 30%;
 }
 
 .titulo{
@@ -128,7 +116,6 @@ a.boton:hover{
 }
 
 .scroll{
-    background-color: brown;
     margin-top: 50px;
     overflow:auto;
     white-space: nowrap;
@@ -138,4 +125,55 @@ a.boton:hover{
    display: inline-block;
    width: 500px;
    padding: 25px;
+}
+
+
+.clientes > img{
+    float: left;
+    margin-right: 11%;
+    margin-top: 5%;
+    width: 160px;
+}
+
+.seccionPie{
+    margin-top: 50%;
+}
+
+.seccionPie .titulo{
+    font-size: 70px;
+    text-align: center;
+    margin-bottom: 0.001rem;
+}
+
+.seccionPie > p{
+    width: 450px;
+    margin-top: 0.001rem;
+    margin-left: 23rem;
+    margin-bottom: 3rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(51, 51, 51);
+    font-size: 25px;
+    line-height: 50px;
+}
+
+.seccionPie .boton{
+    margin-left: 40%;
+}
+
+.pie{
+    margin-top: 150px;
+    text-align: center;
+    line-height: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.1rem;
+    color: rgb(51, 51, 51);
+}
+
+.pie > a{
+    color: rgb(51, 51, 51);
+}
+
+.pie > a:hover{
+    color: #f74545;
+    transition: color 400ms ease;
 }
