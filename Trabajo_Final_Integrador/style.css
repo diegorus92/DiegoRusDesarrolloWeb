@@ -1,4 +1,6 @@
 body{
     width: 100%;
-    background-color: #000957;
+    background-image: linear-gradient(#000957, #344CB7, #000957); 
+    background-size: 100px 650px;
+    background-repeat: repeat;
 }
