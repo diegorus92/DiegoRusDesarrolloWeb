@@ -5,4 +5,8 @@ body{
     background-repeat: repeat;
 }
 
+label{
+    color: #fff;
+    font-weight: bolder;
+}
 
