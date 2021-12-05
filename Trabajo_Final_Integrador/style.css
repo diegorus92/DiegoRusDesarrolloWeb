@@ -1,8 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
 body{
     width: 100%;
-    background-image: linear-gradient(#000957, #344CB7, #000957); 
-    background-size: 100px 650px;
+    background-image: linear-gradient(#000957, #344CB7, #e9e9e9); 
+    background-size: 100px 800px;
     background-repeat: repeat;
 }
 
 
+.infoDesarrollador{
+    color: white;
+    /*border: 2px solid white;*/
+    background-color: rgba(83, 0, 124, 0.425);
+    text-align: left;
+    font-family: 'Teko', sans-serif;
+    font-size: 1.7rem;
+}
+
+.col-2{
+    color:rgb(137, 6, 245);
+}
+
+.infoDesarrollador p{
+    margin-left: 2%;
+}
+
+.etiqueta{
+    text-decoration: underline;
+    color:rgb(211, 29, 196);
+}
+
+.parrafoEspecial{
+    margin-top: 75px;
+}
+
+#flecha{
+    transform-origin: 50% 50%;
+    /*transform: rotate(90deg);*/
+    fill:#f7f7f7;
+    stroke:rgb(117, 44, 201);
+    stroke-width: 1px;
+    filter:drop-shadow( -1.5px 1.5px 1px rgb(146, 68, 236));
+
+    animation-name: animacion-flecha;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#svg-flecha{
+    /*border:1px solid white;*/
+    transform: translate(-5px, -5px);
+    width: 50px; 
+    height: 50px;
+}
+
+@keyframes animacion-flecha{
+    to{
+        fill:rgb(211, 29, 196);
+        stroke:rgb(218, 218, 218);
+        filter:drop-shadow( -1.5px 1.5px 1px rgb(218, 218, 218));
+    }
+}
