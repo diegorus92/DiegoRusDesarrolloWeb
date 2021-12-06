@@ -165,7 +165,13 @@ body{
     height: 500px;
 }
 
-.carousel-caption h5, p{
+.carousel-caption h5{
+    color: rgb(95, 0, 173);
+    background-color: rgba(0, 153, 255, 0.842);
+    font-weight: bold;
+}
+
+.carousel-caption p{
     color: rgb(95, 0, 173);
     background-color: rgba(0, 153, 255, 0.842);
     font-weight: bold;
