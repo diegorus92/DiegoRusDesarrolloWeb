@@ -12,6 +12,7 @@ body{
     color: white;
     /*border: 2px solid white;*/
     background-color: rgba(83, 0, 124, 0.425);
+    width: 100%;
     text-align: left;
     font-family: 'Teko', sans-serif;
     font-size: 1.7rem;
@@ -63,27 +64,6 @@ body{
     
 }
 
-@media screen and (min-width: 300px) and (max-width: 600px){
-    #pantalla-principal{
-        font-size: 1.3rem;
-    }
-
-}
-
-@media screen and (min-width: 501px) and (max-width: 1024px){
-    #pantalla-principal{
-        font-size: 2.3rem;
-    }
-
-}
-
-@media screen and (min-width: 1025px) and (max-width: 1280px){
-    #pantalla-principal{
-        font-size: 5rem;
-    }
-
-}
-
 
 .flex-calculadora{
     background-image: linear-gradient(rgba(238, 130, 238, 0.212), rgba(0, 0, 255, 0.192));
@@ -130,24 +110,41 @@ body{
     font-family: monospace;
     font-size: 2rem;
     flex-grow: 1;
+    border-radius: 10px;
+}
+
+.boton-operacion:hover{
+    background-color: rgb(144, 59, 241);
+    color: rgb(35, 3, 151);
+    transition: background-color 0.7s ease;
+    transition: color 0.7s ease;
 }
 
 #boton-igual{
-    background-color:green;
+    background-color:rgb(0, 139, 0);
+}
+
+#boton-igual:hover{
+    background-color:rgb(10, 196, 25);
 }
 
 #boton-del{
-    background-color: red;
+    background-color: rgb(175, 0, 0);
     color:white;
 }
 
+#boton-del:hover{
+    background-color: rgb(255, 0, 0);
+}
+
 .botonera-numeros{
-    background-color: rgba(4, 143, 46, 0.349);
+    background-color: rgba(13, 4, 143, 0.349);
     border: 3px rgb(15, 0, 80) outset;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
+
 
 .boton{
     background-color: grey;
@@ -157,12 +154,25 @@ body{
     margin-left: 10%;
     margin-right: 10%;
     margin-bottom: 1%;
+    border-radius: 10px;
+}
 
+.boton:hover{
+    background-color: rgb(35, 3, 151);
+    color:rgb(144, 59, 241);
+    transition: background-color 0.7s ease;
+}
+
+.proyectos-anteriores{
+    background-color: rgba(83, 0, 124, 0.425);
+    height: 1000px;
 }
 
 .carousel{
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 400px;
+    margin-top: 50px;
+    margin-left: 50%;
 }
 
 .carousel-caption h5{
@@ -175,6 +185,49 @@ body{
     color: rgb(95, 0, 173);
     background-color: rgba(0, 153, 255, 0.842);
     font-weight: bold;
+}
+
+.enlace{
+    color:rgb(197, 0, 204);
+    font-family: 'Teko', sans-serif;
+    font-size: 2rem;
+}
+
+@media screen and (min-width: 250px) and (max-width: 600px){
+    #pantalla-principal{
+        font-size: 1.3rem;
+    }
+    .carousel{
+        margin-left: 0%;
+        width: 400px;
+    }
+
+    .carousel-caption p{
+        font-size: 0.5rem;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px){
+    #pantalla-principal{
+        font-size: 2.3rem;
+    }
+
+    .carousel{
+        margin-left: 0%;
+        width: 400px;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px){
+    #pantalla-principal{
+        font-size: 5rem;
+    }
+
+    .carousel{
+        margin-left: 50%;
+        width: 500px;
+    }
+
 }
 
 @keyframes animacion-flecha{
