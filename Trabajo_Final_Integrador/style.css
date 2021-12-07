@@ -8,11 +8,14 @@ body{
 }
 
 
+
 .infoDesarrollador{
     color: white;
     /*border: 2px solid white;*/
     background-color: rgba(83, 0, 124, 0.425);
     width: 100%;
+    margin-top: 200px;
+    margin-bottom: 200px;
     text-align: left;
     font-family: 'Teko', sans-serif;
     font-size: 1.7rem;
