@@ -56,38 +56,61 @@ function entradaDato(e) {
 
 function deletePantallaPrincipal(){
     pantallaPrincipal.innerHTML = "0";
-    desabilitarOpreadores(false);
+    deshabilitarOpreadores(false);
 }
 
 function excedeLongitud(cantidadCaracteresMaxima, cantidadActual){//devuelve true si la cantidad de caracteres en pantalla es mayor a la permitida
     return cantidadActual >= cantidadCaracteresMaxima; 
 }
 
-function desabilitarOpreadores(booleano){
+function deshabilitarHoverOperadores(booleano){//Con true remueve la clase animada de los botones de operadores para que no funcione el hover del CSS. Con false reestablece la clase animada y el hover vuelve a funcionar
+    var operadores = document.getElementsByClassName("boton-operacion");
+    console.log("Elementos con class='boton-operacion: '"+operadores.length);
+    if(booleano){
+        for(var i = 0; i <= 3; i++){//solo tomo hasta el indice 3 para que solo tome los operadores +, -, x, /
+            console.log(operadores[i].innerText);
+            
+            operadores[i].classList.remove("boton-operacion-animado");
+        }
+    }
+    else{
+        for(var i = 0; i <= 3; i++){
+            operadores[i].classList.add("boton-operacion-animado");
+        }
+    }
+}
+
+function deshabilitarOpreadores(booleano){//Desactiva los botones de operadores segun el booleano
     if(booleano){
         document.getElementById("boton-+").disabled = true;
         document.getElementById("boton--").disabled = true;
         document.getElementById("boton-x").disabled = true;
         document.getElementById("boton-/").disabled = true;
+
+        deshabilitarHoverOperadores(booleano);
     }
     else{
         document.getElementById("boton-+").disabled = false;
         document.getElementById("boton--").disabled = false;
         document.getElementById("boton-x").disabled = false;
         document.getElementById("boton-/").disabled = false;
+
+        deshabilitarHoverOperadores(booleano);
     }
 }
+
+
 
 function operacionSeleccionada(operacion){
     console.log(operacion);
     if(operacion == "+" || operacion == "-" || operacion == "x" || operacion == "/"){
         console.log("entro a operacion " + operacion);
-        desabilitarOpreadores(true);
+        deshabilitarOpreadores(true);
     }
     else if(operacion == "="){
-        console.log("entro a borrado e igual" + operacion);
-        desabilitarOpreadores(false);
+        console.log("entro a  igual" + operacion);
         resolverOperacion(pantallaPrincipal.innerHTML);
+        deletePantallaPrincipal();
     }
 }
 
@@ -166,6 +189,13 @@ function mostrarResultado(arrayOperacion){//Muestra la operacion y su resultado 
     pantallaSecundaria.innerText = arrayOperacion[0]+" "+arrayOperacion[2]+" "+arrayOperacion[1]+" "+"="+" "+arrayOperacion[3];
 }
 
+
+//Prueba de cambio de clases de elementos
+/*var operaciones = document.getElementById("boton-+");
+operaciones.classList.remove("boton-operacion");
+operaciones.classList.add("boton-operacion-desactivado");*/
+
+//Prueba con funciones de Strings
 /*var operacion = "54/20";
 console.log(operacion);
 console.log(operacion.includes("/"));
