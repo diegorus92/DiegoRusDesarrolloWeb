@@ -196,6 +196,9 @@ var botonSubir = document.getElementById("boton-subir");
 botonSubir.style.setProperty("display", "none");
 botonSubir.style.setProperty("position", "absolute");
 botonSubir.style.setProperty("top", "2600px");
+botonSubir.style.setProperty("animation-name", "animacion-flecha-subir");
+botonSubir.style.setProperty("animation-duration", "1s");
+botonSubir.style.setProperty("animation-iteration-count", "1");
 
 window.addEventListener("scroll", function(e){
     console.log("scrolling");
@@ -213,6 +216,7 @@ window.addEventListener("scroll", function(e){
         console.log("FINAL DE LA PÁGINA!!!");
         botonSubir.style.display = "block";
         botonSubir.style.top = (alturaTotalBody - 120)+"px";
+
     }
     else{
         botonSubir.style.display = "none";

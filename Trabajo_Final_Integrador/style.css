@@ -305,3 +305,13 @@ body{
         fill: white;
     }
 }
+
+@keyframes animacion-flecha-subir {
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
