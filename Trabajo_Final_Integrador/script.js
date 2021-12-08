@@ -190,6 +190,37 @@ function mostrarResultado(arrayOperacion){//Muestra la operacion y su resultado 
 }
 
 
+//Boton para ir al principio de la página cuando se llega al final
+console.log("scroll");
+var botonSubir = document.getElementById("boton-subir");
+botonSubir.style.setProperty("display", "none");
+botonSubir.style.setProperty("position", "absolute");
+botonSubir.style.setProperty("top", "2600px");
+
+window.addEventListener("scroll", function(e){
+    console.log("scrolling");
+
+    var alturaTotalBody = document.getElementsByTagName("body")[0].offsetHeight;
+    var posicionActualScrollY = window.scrollY;
+    var alturaViewport = window.visualViewport.height;
+
+    console.log("Posicion Y de scroll: "+posicionActualScrollY);
+    console.log("Altura total del <body>"+alturaTotalBody);
+    console.log("Altura del viewport: "+alturaViewport);
+
+    //cuando la alturaTotalBody = (posicionActualScrollY + alturaViewport) --> Se llegó al finál del la página
+    if(alturaTotalBody == (posicionActualScrollY + alturaViewport)){
+        console.log("FINAL DE LA PÁGINA!!!");
+        botonSubir.style.display = "block";
+        botonSubir.style.top = (alturaTotalBody - 120)+"px";
+    }
+    else{
+        botonSubir.style.display = "none";
+    }
+});
+
+//////////////////////////////////////////////////////////////////
+
 //Prueba de cambio de clases de elementos
 /*var operaciones = document.getElementById("boton-+");
 operaciones.classList.remove("boton-operacion");

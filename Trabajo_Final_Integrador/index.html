@@ -11,7 +11,7 @@
 <body>
 
     <!--MENU-->
-    <ul class="nav nav-pills flex-column flex-sm-row">
+    <ul class="nav nav-pills flex-column flex-sm-row" id="menu">
       <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="#primera-seccion">Información del desarrollador</a>
       </li>
@@ -250,6 +250,13 @@
       </div>
     </div>
     <!--------------------------------------------------------------->
+
+    <!--Boton para ir al inicio de la página-->
+    <!--<button type="button" class="boton-subir" id="boton-subir"><a href="#primera-seccion">subir!</a>a></button>-->
+    <a href="#menu" class="boton-subir" id="boton-subir">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-arrow-up-bold-outline" viewBox="0 0 24 24" class="svg-boton-subir"><path d="M16,13V21H8V13H2L12,3L22,13H16M7,11H10V19H14V11H17L12,6L7,11Z" /></svg>
+    </a>
+    <!---------------------------------------------------------->
 
     <!--Script-->
     <script src="script.js"></script>
