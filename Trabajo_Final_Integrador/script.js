@@ -156,14 +156,14 @@ function formatearOperacion(stringOperacion){//Toma el string de la pantallaPrin
 function calcular(dato1, dato2, signoOperacion){
     switch(signoOperacion){
         case "+":
-            return(parseFloat(dato1)+parseFloat(dato2));
+            return(parseFloat(dato1)+parseFloat(dato2)).toFixed(3);
         case "-":
-            return(parseFloat(dato1)-parseFloat(dato2));
+            return(parseFloat(dato1)-parseFloat(dato2)).toFixed(3);
         case "x":
-            return(parseFloat(dato1)*parseFloat(dato2));
+            return(parseFloat(dato1)*parseFloat(dato2)).toFixed(3);
         case "/":
             if(dato2 > 0) {
-                return(parseFloat(dato1)/parseFloat(dato2))
+                return(parseFloat(dato1)/parseFloat(dato2)).toFixed(3);
             }
             else{
                 miErrorDivision =  new DivisionByZeroException("El divisor no puede ser 0");
@@ -207,15 +207,17 @@ window.addEventListener("scroll", function(e){
     var posicionActualScrollY = window.scrollY;
     var alturaViewport = window.visualViewport.height;
 
+    var adelantador = 150; //para que la flecha aparezca poco antes de llegar al fin de la página
+
     console.log("Posicion Y de scroll: "+posicionActualScrollY);
     console.log("Altura total del <body>"+alturaTotalBody);
     console.log("Altura del viewport: "+alturaViewport);
 
     //cuando la alturaTotalBody = (posicionActualScrollY + alturaViewport) --> Se llegó al finál del la página
-    if(alturaTotalBody == (posicionActualScrollY + alturaViewport)){
+    if(alturaTotalBody <= (posicionActualScrollY + alturaViewport + adelantador)){
         console.log("FINAL DE LA PÁGINA!!!");
         botonSubir.style.display = "block";
-        botonSubir.style.top = (alturaTotalBody - 120)+"px";
+        botonSubir.style.top = (alturaTotalBody - adelantador)+"px";
 
     }
     else{

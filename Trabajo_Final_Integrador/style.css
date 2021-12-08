@@ -239,6 +239,12 @@ body{
     #pantalla-principal{
         font-size: 1.3rem;
     }
+
+    #pantalla-secundaria{
+        font-size: 0.7rem;
+        color: greenyellow;
+    }
+
     .carousel{
         margin-left: 0%;
         width: 400px;
@@ -256,6 +262,11 @@ body{
     
     #pantalla-principal{
         font-size: 2.3rem;
+    }
+
+    #pantalla-secundaria{
+        font-size: 1rem;
+        color: greenyellow;
     }
 
     .carousel{
