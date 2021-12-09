@@ -72,6 +72,9 @@ function entradaDato(e) {
     }
     else{
         console.log("Exceso de caracteres en pantalla");
+        if(e.target.value == "="){
+            operacionSeleccionada(e.target.value);
+        }
     }
 }
 
