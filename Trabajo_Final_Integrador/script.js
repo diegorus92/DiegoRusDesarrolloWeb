@@ -34,16 +34,37 @@ while(indiceBoton < 11){
 //Tomando referencia de las pantallas
 var pantallaPrincipal = document.getElementById("pantalla-principal");
 var pantallaSecundaria = document.getElementById("pantalla-secundaria");
+var limiteCaracteresPantallaPrincipal = 13;
 
 console.log(pantallaPrincipal.innerHTML);
 console.log(pantallaSecundaria.innerHTML);
 //////////////////////////////////////////////////////////
 
+function excedeLongitud(cantidadCaracteresMaxima, cantidadActual){//devuelve true si la cantidad de caracteres en pantalla es mayor a la permitida
+    return cantidadActual >= cantidadCaracteresMaxima; 
+}
+
+/*Deshabilita los botones de operaciones hasta que se haya resuelto la operación
+evitando elegir operadores mas de una vez
+Si se presionó "=" resuelve la operación y resetea la pantallaPrincipal*/
+function operacionSeleccionada(operacion){
+    console.log(operacion);
+    if(operacion == "+" || operacion == "-" || operacion == "x" || operacion == "/"){
+        console.log("entro a operacion " + operacion);
+        deshabilitarOpreadores(true);
+    }
+    else if(operacion == "="){
+        console.log("entro a  igual" + operacion);
+        resolverOperacion(pantallaPrincipal.innerHTML);
+        deletePantallaPrincipal();
+    }
+}
+
 function entradaDato(e) {
     e.preventDefault();
     console.log(e.target.value);
-    if(!excedeLongitud(12, pantallaPrincipal.innerHTML.length)){//Si da false (NO excede caracteres), agrega el caracter a la pantalla
-        if(e.target.value != "="){
+    if(!excedeLongitud(limiteCaracteresPantallaPrincipal, pantallaPrincipal.innerHTML.length)){//Si da false (NO excede caracteres), agrega el caracter a la pantalla
+        if(e.target.value != "="){//Todos los caracteres excepto el "=" se muestran en pantallaPrincipal
             pantallaPrincipal.innerHTML += e.target.value;
         }
         operacionSeleccionada(e.target.value);
@@ -54,14 +75,12 @@ function entradaDato(e) {
     }
 }
 
+//Resetea la pantalla principal y habilita los botones de operaciones
 function deletePantallaPrincipal(){
     pantallaPrincipal.innerHTML = "0";
     deshabilitarOpreadores(false);
 }
 
-function excedeLongitud(cantidadCaracteresMaxima, cantidadActual){//devuelve true si la cantidad de caracteres en pantalla es mayor a la permitida
-    return cantidadActual >= cantidadCaracteresMaxima; 
-}
 
 function deshabilitarHoverOperadores(booleano){//Con true remueve la clase animada de los botones de operadores para que no funcione el hover del CSS. Con false reestablece la clase animada y el hover vuelve a funcionar
     var operadores = document.getElementsByClassName("boton-operacion");
@@ -100,19 +119,6 @@ function deshabilitarOpreadores(booleano){//Desactiva los botones de operadores 
 }
 
 
-
-function operacionSeleccionada(operacion){
-    console.log(operacion);
-    if(operacion == "+" || operacion == "-" || operacion == "x" || operacion == "/"){
-        console.log("entro a operacion " + operacion);
-        deshabilitarOpreadores(true);
-    }
-    else if(operacion == "="){
-        console.log("entro a  igual" + operacion);
-        resolverOperacion(pantallaPrincipal.innerHTML);
-        deletePantallaPrincipal();
-    }
-}
 
 //Excepciónes propias
 function DivisionByZeroException(mensaje){
@@ -165,37 +171,22 @@ function calcular(dato1, dato2, signoOperacion){
     switch(signoOperacion){
         case "+":
             var resultado = parseFloat(dato1) + parseFloat(dato2);
-            if(esEntero(resultado)){ 
-                return parseInt(resultado);
-            }
-            else{
-                return resultado.toFixed(3);
-            }
+            //Operador condicional ternario, para evitar utilizar if-else el cual ocuparía mas líneas
+            esEntero(resultado) ? parseInt(resultado) : (resultado = parseFloat(resultado).toFixed(2)); 
+            return resultado;
         case "-":
             var resultado = parseFloat(dato1)-parseFloat(dato2);
-            if(esEntero(resultado)){ 
-                return parseInt(resultado);
-            }
-            else{
-                return resultado.toFixed(3);
-            }
+            esEntero(resultado) ? parseInt(resultado) :  (resultado = parseFloat(resultado).toFixed(2));
+            return resultado;
         case "x":
             var resultado = parseFloat(dato1)*parseFloat(dato2);
-            if(esEntero(resultado)){ 
-                return parseInt(resultado);
-            }
-            else{
-                return resultado.toFixed(3);
-            }
+            esEntero(resultado) ? parseInt(resultado) :  (resultado = parseFloat(resultado).toFixed(2));
+            return resultado;
         case "/":
             if(dato2 > 0) {
                 var resultado = parseFloat(dato1)/parseFloat(dato2);
-                if(esEntero(resultado)){ 
-                    return parseInt(resultado);
-                }
-                else{
-                    return resultado.toFixed(3);
-                }
+                esEntero(resultado) ? parseInt(resultado) :  (resultado = parseFloat(resultado).toFixed(2));
+                return resultado;
             }
             else{
                 miErrorDivision =  new DivisionByZeroException("El divisor no puede ser 0");
