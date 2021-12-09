@@ -151,19 +151,51 @@ function formatearOperacion(stringOperacion){//Toma el string de la pantallaPrin
     
 }
 
+function esEntero(numero){//Devuelve true si el numero es entero, false si tiene decimales
+    if((numero % 1) == 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 
 
 function calcular(dato1, dato2, signoOperacion){
     switch(signoOperacion){
         case "+":
-            return(parseFloat(dato1)+parseFloat(dato2)).toFixed(3);
+            var resultado = parseFloat(dato1) + parseFloat(dato2);
+            if(esEntero(resultado)){ 
+                return parseInt(resultado);
+            }
+            else{
+                return resultado.toFixed(3);
+            }
         case "-":
-            return(parseFloat(dato1)-parseFloat(dato2)).toFixed(3);
+            var resultado = parseFloat(dato1)-parseFloat(dato2);
+            if(esEntero(resultado)){ 
+                return parseInt(resultado);
+            }
+            else{
+                return resultado.toFixed(3);
+            }
         case "x":
-            return(parseFloat(dato1)*parseFloat(dato2)).toFixed(3);
+            var resultado = parseFloat(dato1)*parseFloat(dato2);
+            if(esEntero(resultado)){ 
+                return parseInt(resultado);
+            }
+            else{
+                return resultado.toFixed(3);
+            }
         case "/":
             if(dato2 > 0) {
-                return(parseFloat(dato1)/parseFloat(dato2)).toFixed(3);
+                var resultado = parseFloat(dato1)/parseFloat(dato2);
+                if(esEntero(resultado)){ 
+                    return parseInt(resultado);
+                }
+                else{
+                    return resultado.toFixed(3);
+                }
             }
             else{
                 miErrorDivision =  new DivisionByZeroException("El divisor no puede ser 0");
